@@ -1,0 +1,32 @@
+{
+  "contacts": [
+    {
+      "id": 1,
+      "name": "Test1",
+      "surname": "Qwe1",
+      "birthDay": "2021-03-25T23:51:42.113Z",
+      "avatar": "https://material.angular.io/assets/img/examples/shiba1.jpg"
+    },
+    {
+      "id": 2,
+      "name": "Test2",
+      "surname": "Qwe2",
+      "birthDay": "2021-03-25T23:51:42.113Z",
+      "avatar": "https://www.flaticon.com/svg/vstatic/svg/147/147144.svg?token=exp=1616883204~hmac=83c7ddd1f5cd32ce2feefbb55e6dcbc4"
+    },
+    {
+      "id": 3,
+      "name": "Test3",
+      "surname": "Qwe3",
+      "birthDay": "2021-03-25T23:51:42.113Z",
+      "avatar": "https://material.angular.io/assets/img/examples/shiba1.jpg"
+    },
+    {
+      "id": 4,
+      "name": "Test4",
+      "surname": "Qwe4",
+      "birthDay": "2021-03-25T23:51:42.113Z",
+      "avatar": "https://material.angular.io/assets/img/examples/shiba1.jpg"
+    }
+  ]
+}
