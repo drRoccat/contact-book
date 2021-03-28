@@ -57,7 +57,7 @@ export class ContactsComponent implements OnInit {
   }
 
   deleteContact(): void {
-    this.contactService.deleteContact(+this.selectedRow.id).subscribe(() => this.ngOnInit());
+    this.contactService.deleteContact(this.selectedRow.id).subscribe(() => this.ngOnInit());
   }
 
 }

@@ -1,6 +1,6 @@
 export class Contact {
 
-  public id: string;
+  public id: number;
   public name: string;
   public surname: string;
   public birthDay: Date;
