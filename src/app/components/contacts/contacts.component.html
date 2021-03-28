@@ -1,11 +1,11 @@
+<button mat-raised-button color="primary" (click)="openForm('add')">Add</button>
+<button mat-raised-button color="primary" [disabled]="!isRowSelected" (click)="openForm('edit')">Edit</button>
+<button mat-raised-button color="primary" [disabled]="!isRowSelected" (click)="deleteContact()">Delete</button>
+
 <mat-form-field>
   <mat-label>Filter</mat-label>
   <input matInput (keyup)="applyFilter($event)" placeholder="Enter hear to find..." #input>
 </mat-form-field>
-
-<button mat-raised-button color="primary">Add</button>
-<button mat-raised-button color="primary" [disabled]="!isRowSelected">Edit</button>
-<button mat-raised-button color="primary" [disabled]="!isRowSelected">Delete</button>
 
 <table mat-table [dataSource]="dataSource" class="mat-elevation-z8" *ngIf="isLoaded">
 

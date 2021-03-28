@@ -3,6 +3,7 @@ import {MatTableDataSource} from '@angular/material/table';
 import {ContactService} from '../../services/contact.service';
 import {Contact} from '../../models/contact.model';
 import {SafeStyle} from '@angular/platform-browser';
+import {Router} from '@angular/router';
 
 
 @Component({
@@ -19,14 +20,13 @@ export class ContactsComponent implements OnInit {
   selectedRow: Contact;
   isRowSelected = false;
 
-  constructor( private contactService: ContactService ) {
+  constructor( private contactService: ContactService, private router: Router ) {
   }
 
   ngOnInit(): void {
-    this.contactService.getAllContacts().subscribe( x => {
-      this.dataSource = new MatTableDataSource(x);
+    this.contactService.getAllContacts().subscribe( (contacts: Contact[]) => {
+      this.dataSource = new MatTableDataSource(contacts);
       this.isLoaded = true;
-      // console.log(this.dataSource);
     });
   }
 
@@ -36,7 +36,6 @@ export class ContactsComponent implements OnInit {
   }
 
   selectRow(row: Contact): void {
-    console.log(row);
     this.selectedRow = row;
     this.isRowSelected = true;
   }
@@ -45,6 +44,20 @@ export class ContactsComponent implements OnInit {
     return {
       silver: row === this.selectedRow
     };
+  }
+
+  openForm(type: string): void {
+    if (type === 'add'){
+      this.router.navigate(['/contact']);
+    } else if (type === 'edit'){
+      this.router.navigate(['/contact', this.selectedRow.id]);
+    } else {
+      this.ngOnInit();
+    }
+  }
+
+  deleteContact(): void {
+    this.contactService.deleteContact(+this.selectedRow.id).subscribe(() => this.ngOnInit());
   }
 
 }

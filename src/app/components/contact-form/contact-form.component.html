@@ -1,0 +1,25 @@
+<form class="form" [formGroup]="editForm" (ngSubmit)="onSubmit()">
+  <mat-form-field appearance="fill" class="full-width">
+    <mat-label>Name</mat-label>
+    <input matInput formControlName="name">
+  </mat-form-field>
+  <mat-form-field appearance="fill" class="full-width">
+    <mat-label>Surname</mat-label>
+    <input matInput formControlName="surname">
+  </mat-form-field>
+  <mat-form-field appearance="fill" class="full-width">
+    <mat-label>Date of birth</mat-label>
+    <input matInput [matDatepicker]="dp" formControlName="birthDay">
+    <mat-datepicker-toggle matSuffix [for]="dp"></mat-datepicker-toggle>
+    <mat-datepicker #dp disabled="false"></mat-datepicker>
+  </mat-form-field>
+  <mat-form-field appearance="fill" class="full-width">
+    <mat-label>Avatar</mat-label>
+    <input matInput formControlName="avatar">
+  </mat-form-field>
+  <button type="button" mat-raised-button style="width: 45%" [routerLink]="'/contacts'">Cancel</button>
+  <button type="submit" mat-raised-button color="primary" [disabled]="editForm.invalid" style="width: 45%">Submit</button>
+</form>
+
+
+
